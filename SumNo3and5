@@ -1,0 +1,27 @@
+public class SumNo3and5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		sumThreeandFive();
+
+	}
+
+	public static void sumThreeandFive() {
+		int countOfMatch = 0;
+		int sumOfMatch = 0;
+
+		for (int i = 1; i <= 1000; i++) {
+			if (i % 3 == 0 && i % 5 == 0) {
+
+				countOfMatch++;
+				sumOfMatch += i;
+				System.out.println("Found a match:- " + i);
+			}
+		}
+
+		System.out.println("Total count: " +countOfMatch);
+
+		System.out.println("Sum " + sumOfMatch);
+	}
+
+}
