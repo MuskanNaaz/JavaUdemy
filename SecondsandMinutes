@@ -1,0 +1,61 @@
+public class SecondsandMinutes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(getDurationString(3945));
+		System.out.println(getDurationString(-3945));
+		System.out.println(getDurationString(60, 45));
+		System.out.println(getDurationString(60, 145));
+		printYearsAndDays(561600);
+	}
+
+	public static String getDurationString(int sec) {
+		if (sec < 0) {
+			return "Invalid data for seconds" + sec + " must be a positive integer Value;";
+
+		}
+		int minutes = sec / 60;
+		int hours = minutes / 60;
+		// System.out.println("Hours " + hours + " Minutes " + minutes);
+		int remainingMinutes = minutes % 60;
+		// System.out.println(remainingMinutes);
+		int remainingSeconds = sec % 60;
+		// System.out.println(remainingSeconds);
+		return hours + "h " + remainingMinutes + "m " + remainingSeconds + "sec ";
+		// return getDurationString (minutes/60,sec%60);- One liner calling method
+		// inside
+		// another methods
+
+	}
+
+	public static String getDurationString(int minutes, int sec) {
+		if (minutes < 0) {
+			return "Invalid data for seconds" + minutes + " must be a positive integer Value;";
+
+		}
+		if (sec >= 0 || sec <= 59) {
+			return "Invalid data for min" + sec + " must be a positive integer Value; " + sec
+					+ " must be less than 59 secs";
+		}
+		int hours = minutes / 60;
+		// System.out.println("Hours " + hours + " Minutes " + minutes);
+		int remainingMinutes = minutes % 60;
+		// System.out.println(remainingMinutes);
+		int remainingSeconds = sec % 60;
+		// System.out.println(remainingSeconds);
+		return hours + "h " + remainingMinutes + "m " + remainingSeconds + "sec ";
+	}
+
+	public static void printYearsAndDays(long minutes){
+	        if(minutes < 0){
+	            System.out.println("Invalid Value");
+	        }else{
+	            
+	            long years = (minutes/(60*24*365));
+	            long remainigDays = (minutes/(60*24)%365);
+	            
+	            System.out.println(minutes + " min = "+ years+ " y "+ remainigDays +" d");
+	        }
+	    }
+
+}
