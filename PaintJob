@@ -1,0 +1,41 @@
+
+public class PaintJob {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(getBucketCount(0.0, 2.1, 1.5, 7));
+		System.out.println(getBucketCount(7.25, 4.3, 2.35));
+		System.out.println(getBucketCount(6.26, 2.2));
+	}
+
+	public static int getBucketCount(double width, double ht, double areaPerBucket, int extraBuckets) {
+		if (width <= 0 || ht <= 0 || areaPerBucket <= 0 || extraBuckets < 0) {
+			return -1;
+		}
+		double areaToPaint = width * ht;
+		double areaCanPaint = areaPerBucket * extraBuckets;
+		double areaLeftToPaint = areaToPaint - areaCanPaint;
+		if (areaLeftToPaint < 0) {
+			return 0;
+		} else {
+			return ((int) Math.ceil(areaLeftToPaint / areaPerBucket));
+		}
+	}
+
+	public static int getBucketCount(double width, double ht, double areaPerBucket) {
+		if (width <= 0 || ht <= 0 || areaPerBucket < 0) {
+			return -1;
+		}
+		double areaToPaint = width * ht;
+		return ((int) Math.ceil(areaToPaint / areaPerBucket));
+	}
+
+	public static int getBucketCount(double area, double areaPerBucket) {
+		if (area <= 0 || areaPerBucket < 0) {
+			return -1;
+		}
+		return ((int) Math.ceil(area / areaPerBucket));
+
+	}
+
+}
